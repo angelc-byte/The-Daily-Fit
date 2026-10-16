@@ -89,13 +89,13 @@ tbody tr:hover { background: #fcfaf6; }
 .person-cell { display: flex; align-items: center; gap: 14px; min-width: 260px; }
 .person-cell strong, .person-cell span { display: block; }
 .person-cell div span { color: var(--muted); font-size: 12px; }
-.avatar { display: grid; width: 42px; height: 42px; flex: 0 0 auto; place-items: center; color: var(--white); background: var(--clay); border-radius: 50%; font-size: 12px; font-weight: 700; }
+.avatar { display: block; width: 42px; height: 42px; flex: 0 0 auto; object-fit: cover; object-position: center; background: var(--clay); border: 2px solid var(--white); border-radius: 50%; box-shadow: 0 0 0 1px var(--line); }
 .id-badge { padding: 5px 9px; background: var(--cream); border-radius: 20px; font-size: 12px; font-weight: 600; }
 
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .team-card { padding: 26px; background: var(--white); border: 1px solid var(--line); }
 .team-card-top { display: flex; align-items: start; justify-content: space-between; }
-.avatar-large { width: 60px; height: 60px; font-family: 'Playfair Display', serif; font-size: 18px; }
+.avatar-large { width: 72px; height: 72px; }
 .status { display: flex; align-items: center; gap: 6px; color: #557056; font-size: 12px; font-weight: 700; }
 .status i { width: 7px; height: 7px; background: #6f906f; border-radius: 50%; }
 .team-card h2 { margin: 24px 0 4px; font-family: 'DM Sans', sans-serif; font-size: 20px; }

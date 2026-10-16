@@ -19,7 +19,7 @@
             @foreach ($users as $user)
                 <article class="team-card">
                     <div class="team-card-top">
-                        <span class="avatar avatar-large">{{ collect(explode(' ', $user['name']))->map(fn ($part) => substr($part, 0, 1))->take(2)->join('') }}</span>
+                        <img class="avatar avatar-large" src="{{ asset($user['avatar']) }}" alt="Profile photo of {{ $user['name'] }}">
                         <span class="status"><i></i>{{ $user['status'] }}</span>
                     </div>
                     <h2>{{ $user['name'] }}</h2>

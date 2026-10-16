@@ -30,7 +30,7 @@
                         <tr>
                             <td>
                                 <div class="person-cell">
-                                    <span class="avatar">{{ collect(explode(' ', $customer['name']))->map(fn ($part) => substr($part, 0, 1))->take(2)->join('') }}</span>
+                                    <img class="avatar" src="{{ asset($customer['avatar']) }}" alt="Profile photo of {{ $customer['name'] }}">
                                     <div><strong>{{ $customer['name'] }}</strong><span>{{ $customer['email'] }}</span></div>
                                 </div>
                             </td>
