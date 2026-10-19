@@ -6,7 +6,7 @@
     <section class="page-hero compact-hero">
         <p class="eyebrow">Account directory</p>
         <h1>Customer Accounts</h1>
-        <p>Customer information supplied by a static PHP array in the CustomerController.</p>
+        <p>Customer information retrieved from the database using Eloquent.</p>
     </section>
 
     <section class="section directory-section">
@@ -30,13 +30,13 @@
                         <tr>
                             <td>
                                 <div class="person-cell">
-                                    <img class="avatar" src="{{ asset($customer['avatar']) }}" alt="Profile photo of {{ $customer['name'] }}">
-                                    <div><strong>{{ $customer['name'] }}</strong><span>{{ $customer['email'] }}</span></div>
+                                    <img class="avatar" src="{{ asset($customer->avatar) }}" alt="Profile photo of {{ $customer->full_name }}">
+                                    <div><strong>{{ $customer->full_name }}</strong><span>{{ $customer->email }}</span></div>
                                 </div>
                             </td>
-                            <td><span class="id-badge">{{ $customer['id'] }}</span></td>
-                            <td>{{ $customer['phone'] }}</td>
-                            <td>{{ $customer['joined'] }}</td>
+                            <td><span class="id-badge">{{ $customer->customer_code }}</span></td>
+                            <td>{{ $customer->phone }}</td>
+                            <td>{{ $customer->created_at->format('M d, Y') }}</td>
                         </tr>
                     @endforeach
                 </tbody>

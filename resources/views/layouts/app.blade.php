@@ -43,7 +43,7 @@
             <a href="{{ route('customers.index') }}">Customers</a>
             <a href="{{ route('users.index') }}">Users</a>
         </div>
-        <p class="copyright">&copy; {{ date('Y') }} The Daily Fit. IT0049 TFA5.</p>
+        <p class="copyright">&copy; {{ date('Y') }} The Daily Fit. IT0049 TFA6.</p>
     </footer>
 </body>
 </html>

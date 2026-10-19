@@ -6,7 +6,7 @@
     <section class="page-hero compact-hero">
         <p class="eyebrow">Store team</p>
         <h1>User Accounts</h1>
-        <p>Staff information supplied by a static PHP array in the UserController.</p>
+        <p>Staff information retrieved from the database using Eloquent.</p>
     </section>
 
     <section class="section directory-section">
@@ -19,14 +19,14 @@
             @foreach ($users as $user)
                 <article class="team-card">
                     <div class="team-card-top">
-                        <img class="avatar avatar-large" src="{{ asset($user['avatar']) }}" alt="Profile photo of {{ $user['name'] }}">
-                        <span class="status"><i></i>{{ $user['status'] }}</span>
+                        <img class="avatar avatar-large" src="{{ asset($user->avatar) }}" alt="Profile photo of {{ $user->full_name }}">
+                        <span class="status"><i></i>{{ $user->status }}</span>
                     </div>
-                    <h2>{{ $user['name'] }}</h2>
-                    <p>{{ $user['role'] }}</p>
+                    <h2>{{ $user->full_name }}</h2>
+                    <p>{{ $user->role }}</p>
                     <dl>
-                        <div><dt>User ID</dt><dd>{{ $user['id'] }}</dd></div>
-                        <div><dt>Username</dt><dd>{{ '@'.$user['username'] }}</dd></div>
+                        <div><dt>User ID</dt><dd>{{ $user->staff_code }}</dd></div>
+                        <div><dt>Username</dt><dd>{{ '@'.$user->username }}</dd></div>
                     </dl>
                 </article>
             @endforeach
