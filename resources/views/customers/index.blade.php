@@ -12,7 +12,7 @@
     <section class="section directory-section">
         <div class="directory-summary">
             <div><span>Total customers</span><strong>{{ count($customers) }}</strong></div>
-            <p>Showing all sample customer records</p>
+            <a class="button button-dark" href="{{ route('customers.create') }}">Create customer</a>
         </div>
 
         <div class="table-wrap">
@@ -23,6 +23,7 @@
                         <th>Customer ID</th>
                         <th>Contact</th>
                         <th>Joined</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,13 +31,14 @@
                         <tr>
                             <td>
                                 <div class="person-cell">
-                                    <img class="avatar" src="{{ asset($customer->avatar) }}" alt="Profile photo of {{ $customer->full_name }}">
+                                    <img class="avatar" src="{{ asset($customer->avatar ?: 'images/avatar-placeholder.svg') }}" alt="Profile photo of {{ $customer->full_name }}">
                                     <div><strong>{{ $customer->full_name }}</strong><span>{{ $customer->email }}</span></div>
                                 </div>
                             </td>
                             <td><span class="id-badge">{{ $customer->customer_code }}</span></td>
                             <td>{{ $customer->phone }}</td>
                             <td>{{ $customer->created_at->format('M d, Y') }}</td>
+                            <td><a class="edit-link" href="{{ route('customers.edit', $customer) }}" aria-label="Edit {{ $customer->full_name }}">Edit</a></td>
                         </tr>
                     @endforeach
                 </tbody>

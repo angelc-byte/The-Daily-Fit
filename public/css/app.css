@@ -111,6 +111,24 @@ tbody tr:hover { background: #fcfaf6; }
 .footer-links { display: flex; gap: 24px; align-items: start; font-size: 13px; }
 .copyright { grid-column: 1 / -1; padding-top: 25px; border-top: 1px solid #423d38; }
 
+.form-section { max-width: 1000px; margin-inline: auto; padding-top: 40px; }
+.account-form { margin-top: 28px; padding: clamp(22px, 4vw, 44px); border: 1px solid var(--line); background: var(--white); }
+.form-field { margin-bottom: 24px; }
+.form-field label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
+.form-field input { display: block; width: 100%; min-height: 48px; padding: 12px; border: 1px solid #a18b78; border-radius: 0; background: #fff; color: var(--ink); font: inherit; }
+.form-field input:focus { outline: 2px solid var(--clay); outline-offset: 3px; }
+.form-field input[aria-invalid="true"] { border-color: #a52e25; }
+.field-error { margin: 8px 0 0; color: #a52e25; font-size: 13px; }
+.form-errors { margin-top: 24px; padding: 20px; border-left: 3px solid #a52e25; background: #fff0ec; color: #74261e; }
+.form-errors p { margin-bottom: 0; }
+.form-note { color: var(--muted); font-size: 13px; line-height: 1.7; }
+.form-actions { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 12px; }
+button.button { cursor: pointer; font-family: inherit; }
+.back-link, .edit-link { color: #774b32; font-size: 14px; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.team-card > .edit-link { display: inline-block; margin-top: 22px; }
+.avatar-editor > img { margin-bottom: 18px; }
+.success-message { margin: 24px clamp(24px, 6vw, 96px); padding: 18px; border-left: 3px solid #557056; background: #edf4eb; color: #314a33; }
+
 @media (max-width: 900px) {
     .hero, .story-grid { grid-template-columns: 1fr; }
     .hero-copy { min-height: 520px; }

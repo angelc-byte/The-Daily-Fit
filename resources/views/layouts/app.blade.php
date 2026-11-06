@@ -29,6 +29,9 @@
     </header>
 
     <main>
+        @if (session('success'))
+            <p class="success-message" role="status">{{ session('success') }}</p>
+        @endif
         @yield('content')
     </main>
 
@@ -43,7 +46,7 @@
             <a href="{{ route('customers.index') }}">Customers</a>
             <a href="{{ route('users.index') }}">Users</a>
         </div>
-        <p class="copyright">&copy; {{ date('Y') }} The Daily Fit. IT0049 TFA6.</p>
+        <p class="copyright">&copy; {{ date('Y') }} The Daily Fit. IT0049 TFA7.</p>
     </footer>
 </body>
 </html>

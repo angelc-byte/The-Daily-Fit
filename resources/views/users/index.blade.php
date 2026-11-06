@@ -12,14 +12,14 @@
     <section class="section directory-section">
         <div class="directory-summary">
             <div><span>Team members</span><strong>{{ count($users) }}</strong></div>
-            <p>Showing all sample user records</p>
+            <a class="button button-dark" href="{{ route('users.create') }}">Create user</a>
         </div>
 
         <div class="team-grid">
             @foreach ($users as $user)
                 <article class="team-card">
                     <div class="team-card-top">
-                        <img class="avatar avatar-large" src="{{ asset($user->avatar) }}" alt="Profile photo of {{ $user->full_name }}">
+                        <img class="avatar avatar-large" src="{{ $user->avatar_url }}" alt="Profile photo of {{ $user->full_name }}">
                         <span class="status"><i></i>{{ $user->status }}</span>
                     </div>
                     <h2>{{ $user->full_name }}</h2>
@@ -28,6 +28,7 @@
                         <div><dt>User ID</dt><dd>{{ $user->staff_code }}</dd></div>
                         <div><dt>Username</dt><dd>{{ '@'.$user->username }}</dd></div>
                     </dl>
+                    <a class="edit-link" href="{{ route('users.edit', $user) }}" aria-label="Edit {{ $user->full_name }}">Edit account &rarr;</a>
                 </article>
             @endforeach
         </div>
